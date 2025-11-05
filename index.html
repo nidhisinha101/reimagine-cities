@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Reimagining Public Safety</title>
+    <!-- The website stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <!-- P5 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <!-- D3 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <!-- The website JavaScript file -->
+    <script src="script.js" defer></script>
+    <script src="sketch.js"></script>
+  </head>
+
+  <body>
+    <!-- Header  -->
+    <section class = "header"><h1>What if we lived in a world without police?</h1></section>
+    <!-- Vision Statement -->
+    <h2>The Vision</h2> 
+    <p> Our cities currently choose to pour tens of millions of dollars into already-bloated police budgets, reinforcing a system of punishment and brokenness, instead of addressing the root causes of crime. We treat policing as the obvious way to treat society’s issues, but what if we looked deeper than that? I offer up this data visualization as a means of reimagining how to allocate city budgets towards building a more beautiful, radical, and resilient community. </p>
+
+    <p> This tree map represents the Oakland Police Department’s overtime budget for the next fiscal year, a whopping $34 million. Each panel represents a proportion of that budget that could instead fully fund a community-centered program, based on the budgets for existing programs in Oakland as well as across the United States (a more detailed methodology is available further down on this page). Hover over each panel to explore another possibility, and click on it to get some more specific data. Scroll further down this page to see a more detailed analysis with references. </p>
+
+    <p> I created this map to push back against the idea that we are engaging in “data-driven policymaking.” OPD’s newly announced budget for the next 2 fiscal years (as of 2025) allocates a whopping $72 million just for police overtime. “Copaganda” leads us to believe that more police equates to less crime, but the data shows that OPD fails to meaningfully impact crime rates even with increased overtime. The alternatives I’ve chosen have repeatedly proven to be tremendously effective at building up communities and preventing violence/crime. Yet often, these are the programs that are begging for scraps while police budgets continue to balloon. It is not only morally imperative but an economic and data-proven necessity that we reallocate funding towards programs that actually address the root causes of violent crime. </p>
+
+    <p> If anything in this chart sounds outlandish to you, I challenge you to consider truly absurd things that have been normalized in our world - such as children being shot in their classrooms, people living in tents on the streets, and entire populations being subjected to state-funded genocide. If there’s something not mentioned on here that you think would be an even greater dream, I encourage you to hold onto that vision (and play around with the interactive visualization tool below the analysis on this page). Let’s keep challenging one another to dream bigger, outside of the carceral capitalist “data-driven” systems we currently live under. </p>
+
+    <p class = "postscript">  *For the simplicity of this visualization, I am focusing just on overtime, but we could really pick any aspect of policing (or the whole concept of policing itself) to harp on. </p>
+    
+    <!-- Animation -->
+    <div id="animation-container"></div>
+
+    <!-- Analysis --> 
+    <h2>The Breakdown </h2>
+    <section class="grid-container" aria-label="Breakdown grid">
+
+      <div class="grid-card">
+        <div class="img-box"><img alt="" /></div>
+        <div class="text-box">
+          <h3>Build more affordable housing</h3>
+          <p class = "description">The Homelessness Pilot Program received a $1 million renewal this past fiscal year, providing rental assistance and social services to residents to prevent homelessness. $1 million could support 125 families, or build 1 unit of affordable housing. [1] For just 10% of OPD’s overtime budget, we could prevent 375 families from being on the streets. </p>
+        </div>
+      </div>
+
+      <div class="grid-card">
+        <div class="img-box"><img alt="" /></div>
+        <div class="text-box"><h3>Invest in youth development</h3>
+        <p class = "description">The arts have taken one of the biggest hits from the passage of Oakland’s recent budget, with the most crucial public arts program role being eliminated to reduce the deficit. Oakland Ballet currently provides free dance education for 8000 Oakland students. [1] Even 5% of OPD’s overtime could be life changing for afterschool youth programs that are often underfunded but are critical to building up youth morale.
+</p></div>
+      </div>
+
+      <div class="grid-card">
+        <div class="img-box"><img alt="" /></div>
+        <div class="text-box"><h3>Provide food for kids</h3>
+        <p class = "description">Oakland recently reduced the funding allocation for their free summer food program, providing nutritious food to families in food deserts. [1] Their total budget is less than 1% of OPD’s overtime budget. If we gave this program even a full 1% of the overtime budget, we would be able to feed hundreds more children even more  food during the summer months. </p></div>
+      </div>
+
+      <div class="grid-card">
+        <div class="img-box"><img alt="" /></div>
+        <div class="text-box"><h3>Take a public health-centered approach to gun violence intervention and prevention</h3>
+        <p class = "description">Short description or budget breakdown goes here.</p></div>
+      </div>
+
+      <div class="grid-card">
+        <div class="img-box"><img alt="" /></div>
+        <div class="text-box"><h3>Invest in improving public transit infrastructure</h3>
+        <p class = "description">Short description or budget breakdown goes here.</p></div>
+      </div>
+
+      <div class="grid-card">
+        <div class="img-box"><img alt="" /></div>
+        <div class="text-box"><h3>Invest in community clinics that promote physical and mental wellness</h3>
+        <p class = "description">Short description or budget breakdown goes here.</p></div>
+      </div>
+
+      <div class="grid-card">
+        <div class="img-box"><img alt="" /></div>
+        <div class="text-box"><h3>Boost local economy by supporting small businesses</h3>
+        <p class = "description">Short description or budget breakdown goes here.</p></div>
+      </div>
+
+      <div class="grid-card">
+        <div class="img-box"><img alt="" /></div>
+        <div class="text-box"><h3>Implement a non-police crisis responder program</h3>
+        <p class = "description">Short description or budget breakdown goes here.</p></div>
+      </div>
+
+      <div class="grid-card">
+        <div class="img-box"><img alt="" /></div>
+        <div class="text-box"><h3>Renovate and restore public parks to provide safe spaces for play and gatherings</h3>
+        <p class = "description">Short description or budget breakdown goes here.</p></div>
+      </div>
+
+      <div class="grid-card">
+        <div class="img-box"><img alt="" /></div>
+        <div class="text-box"><h3>Organize community events where people can meet their neighbors</h3>
+        <p class = "description">Short description or budget breakdown goes here.</p></div>
+      </div>
+
+      <div class="grid-card">
+        <div class="img-box"><img alt="" /></div>
+        <div class="text-box"><h3>Create a community garden with fresh fruits and vegetables</h3>
+        <p class = "description">Short description or budget breakdown goes here.</p></div>
+      </div>
+
+      <div class="grid-card">
+        <div class="img-box"><img alt="" /></div>
+        <div class="text-box"><h3>Renovate libraries which provide essential resources for free to city residents</h3>
+        <p class = "description">Short description or budget breakdown goes here.</p></div>
+      </div>
+
+    </section>
+
+    <!-- Methodology (might remove and just keep the vision statement at the top?) -->
+    <h2>The Methodology</h2>
+    <p>My numbers are based off of the analysis I had done on the budgets and results for OPD and alternative programs both in Oakland and across the U.S. Acknowledging that different cities have different population sizes and different needs, I give ballpark estimates of what is possible to achieve with mere fractions of the police budget. However, there is an element of "fuck-all" that I am embracing. My numbers are not exact, the math is not to the perfect decimal point, sometimes I decided to give a program an extra $1 million just because I can. If OPD can claim they need $34,000,000 in overtime next year because they feel like it, then I can claim that we should give 2% of that to the program that gives kids living in food deserts free lunch over the summer because I feel like it. At first I tried to pull exact data from exact sources to be as precise as possible - but when the police (or tech bros, or policymakers) can pull numbers out of their ass, why can’t I? There is no such thing as truly objective or neutral data, nor should there be. Data exists in the context of the world around us, and it is important to acknowledge that. Even if the math worked out that giving cops more money makes them more effective, I would rather feed a kid lunch than give a cop a gun. </p>
+    <!-- Interactive component -->
+    <h2>Now it's your turn</h2>
+  
+
+    
+    <!-- Thanks -->
+    <h2>Thanks</h2>
+    <p> This project was directly inspired by the ongoing grassroots community building efforts in Oakland and across the U.S. I am but a humble data scientist who draws inspiration 
+        from the people around me doing the work every day on the ground.  
+    </p>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+
+.arimo-fonts{
+  font-family: "Arimo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+    background-color: rgb(218, 218, 251);
+}
+
+h1 {
+    font-family: "Arimo", sans-serif;
+    text-align: center;
+    font-size: 28px;
+}
+
+h2 {
+    font-family: "Arimo", sans-serif;
+    font-size: 20px;
+    margin-left: 10px;
+    
+}
+
+h3 {
+    font-family: "Arimo", sans-serif;
+    text-align: center;
+    font-size: 16px;
+}
+
+p {
+    font-family: "Arimo", sans-serif;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.postscript{
+    font-size: 14px;
+    font-style: italic;
+    margin-left: 10px;
+}
+
+.animation-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+/* Center the canvas element specifically */
+.animation-container canvas {
+    display: block !important;  /* Override p5.js default */
+    margin: 0 auto !important; /* Override p5.js default */
+    position: static !important; /* Override p5.js default absolute positioning */
+}
+
+/* Grid layout with min 300px per frame */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    justify-content: center;
+    padding: 16px;
+}
+
+.grid-card {
+    /* allow cards to stretch horizontally but keep a consistent visual width
+    when there's room; use min-height so text area can expand if needed */
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.img-box {
+    width: 100%;
+    height: 200px; /* fixed image display height */
+    background: #e6e6e6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ensure images fill the box */
+    display: block;
+}
+
+.text-box {
+    min-height: 200px; 
+    padding: 8px;
+    box-sizing: border-box;
+    overflow: auto;
+    background: #fbfbfb;
+}
+
+.description {
+    font-size: 14px;
+    color: #555;
+}
+
+/* On very wide screens, limit the max-width of a card to keep readable line lengths */
+@media (min-width: 1200px) {
+    .grid-card { max-width: 240px; }
+}
