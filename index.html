@@ -9,125 +9,194 @@
     <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <!-- P5 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/2.0.0/p5.min.js"></script>
     <!-- D3 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
-    <!-- The website JavaScript file -->
+    <!-- The website JavaScript files -->
     <script src="script.js" defer></script>
     <script src="sketch.js"></script>
   </head>
 
   <body>
     <!-- Header  -->
-    <section class = "header"><h1>What if we lived in a world without police?</h1></section>
+    <section class = "header"><h1>What would a world without police look like?</h1></section>
+    
     <!-- Vision Statement -->
     <h2>The Vision</h2> 
-    <p> Our cities currently choose to pour tens of millions of dollars into already-bloated police budgets, reinforcing a system of punishment and brokenness, instead of addressing the root causes of crime. We treat policing as the obvious way to treat society’s issues, but what if we looked deeper than that? I offer up this data visualization as a means of reimagining how to allocate city budgets towards building a more beautiful, radical, and resilient community. </p>
+    <p> Our cities currently choose to pour tens of millions of dollars into already-bloated police budgets, reinforcing a system of punishment and brokenness, instead of addressing the root causes of crime. We treat policing as the obvious way to treat society’s issues, but what if we looked deeper than that? I offer up this data visualization as a means of reimagining how to distribute city budgets to building a more beautiful, radical, and resilient community. </p>
 
-    <p> This tree map represents the Oakland Police Department’s overtime budget for the next fiscal year, a whopping $34 million. Each panel represents a proportion of that budget that could instead fully fund a community-centered program, based on the budgets for existing programs in Oakland as well as across the United States (a more detailed methodology is available further down on this page). Hover over each panel to explore another possibility, and click on it to get some more specific data. Scroll further down this page to see a more detailed analysis with references. </p>
+    <p> This tree map represents the Oakland Police Department’s overtime budget for the next fiscal year, a whopping $34 million. [1] Each panel represents a proportion of that budget that could instead fully fund a community-centered program, based on the budgets for existing programs in Oakland as well as across the United States (a more detailed methodology is available lower on the page). Hover over each panel to explore another possibility, and click on it to get some more specific data. Scroll further down this page to see a more detailed analysis with references. </p>
 
-    <p> I created this map to push back against the idea that we are engaging in “data-driven policymaking.” OPD’s newly announced budget for the next 2 fiscal years (as of 2025) allocates a whopping $72 million just for police overtime. “Copaganda” leads us to believe that more police equates to less crime, but the data shows that OPD fails to meaningfully impact crime rates even with increased overtime. The alternatives I’ve chosen have repeatedly proven to be tremendously effective at building up communities and preventing violence/crime. Yet often, these are the programs that are begging for scraps while police budgets continue to balloon. It is not only morally imperative but an economic and data-proven necessity that we reallocate funding towards programs that actually address the root causes of violent crime. </p>
+    <p> I created this map to push back against the idea that we are engaging in “data-driven policymaking.” “Copaganda” leads us to believe that more police equates to less crime, but the data shows that OPD fails to meaningfully impact crime rates even with increased overtime. [2] [3] The alternatives I’ve chosen have repeatedly proven to be tremendously effective at not just reducing crime, but preventing it entirely, by meeting residents’ basic needs. Yet often, these are the programs that are begging for scraps while police budgets continue to balloon. It is not only morally imperative but an economic and data-proven necessity that we reallocate funding towards programs that actually address the root causes of violent crime. [4] </p>
 
-    <p> If anything in this chart sounds outlandish to you, I challenge you to consider truly absurd things that have been normalized in our world - such as children being shot in their classrooms, people living in tents on the streets, and entire populations being subjected to state-funded genocide. If there’s something not mentioned on here that you think would be an even greater dream, I encourage you to hold onto that vision (and play around with the interactive visualization tool below the analysis on this page). Let’s keep challenging one another to dream bigger, outside of the carceral capitalist “data-driven” systems we currently live under. </p>
+    <p> If anything in this chart sounds outlandish to you, I challenge you to consider truly absurd things that have been normalized in our world - such as children being shot in their classrooms, people living in tents on the streets, and entire populations being subjected to state-funded genocide. If there’s something not mentioned on here that you think would be an even greater dream, I encourage you to hold onto that vision (and play around with the interactive visualization tool below the analysis on this page). Let’s keep pushing one another to dream bigger, outside of the carceral capitalist “data-driven” systems we currently live under. </p>
 
-    <p class = "postscript">  *For the simplicity of this visualization, I am focusing just on overtime, but we could really pick any aspect of policing (or the whole concept of policing itself) to harp on. </p>
+    <p class = "postscript">  *For the simplicity of this visualization, I am focusing just on overtime, but this sentiment applies to the militarization, oversurveillance, and entire concept of policing as well. </p>
     
     <!-- Animation -->
     <div id="animation-container"></div>
 
-    <!-- Analysis --> 
-    <h2>The Breakdown </h2>
-    <section class="grid-container" aria-label="Breakdown grid">
-
-      <div class="grid-card">
-        <div class="img-box"><img alt="" /></div>
-        <div class="text-box">
-          <h3>Build more affordable housing</h3>
-          <p class = "description">The Homelessness Pilot Program received a $1 million renewal this past fiscal year, providing rental assistance and social services to residents to prevent homelessness. $1 million could support 125 families, or build 1 unit of affordable housing. [1] For just 10% of OPD’s overtime budget, we could prevent 375 families from being on the streets. </p>
-        </div>
-      </div>
-
-      <div class="grid-card">
-        <div class="img-box"><img alt="" /></div>
-        <div class="text-box"><h3>Invest in youth development</h3>
-        <p class = "description">The arts have taken one of the biggest hits from the passage of Oakland’s recent budget, with the most crucial public arts program role being eliminated to reduce the deficit. Oakland Ballet currently provides free dance education for 8000 Oakland students. [1] Even 5% of OPD’s overtime could be life changing for afterschool youth programs that are often underfunded but are critical to building up youth morale.
-</p></div>
-      </div>
-
-      <div class="grid-card">
-        <div class="img-box"><img alt="" /></div>
-        <div class="text-box"><h3>Provide food for kids</h3>
-        <p class = "description">Oakland recently reduced the funding allocation for their free summer food program, providing nutritious food to families in food deserts. [1] Their total budget is less than 1% of OPD’s overtime budget. If we gave this program even a full 1% of the overtime budget, we would be able to feed hundreds more children even more  food during the summer months. </p></div>
-      </div>
-
-      <div class="grid-card">
-        <div class="img-box"><img alt="" /></div>
-        <div class="text-box"><h3>Take a public health-centered approach to gun violence intervention and prevention</h3>
-        <p class = "description">Short description or budget breakdown goes here.</p></div>
-      </div>
-
-      <div class="grid-card">
-        <div class="img-box"><img alt="" /></div>
-        <div class="text-box"><h3>Invest in improving public transit infrastructure</h3>
-        <p class = "description">Short description or budget breakdown goes here.</p></div>
-      </div>
-
-      <div class="grid-card">
-        <div class="img-box"><img alt="" /></div>
-        <div class="text-box"><h3>Invest in community clinics that promote physical and mental wellness</h3>
-        <p class = "description">Short description or budget breakdown goes here.</p></div>
-      </div>
-
-      <div class="grid-card">
-        <div class="img-box"><img alt="" /></div>
-        <div class="text-box"><h3>Boost local economy by supporting small businesses</h3>
-        <p class = "description">Short description or budget breakdown goes here.</p></div>
-      </div>
-
-      <div class="grid-card">
-        <div class="img-box"><img alt="" /></div>
-        <div class="text-box"><h3>Implement a non-police crisis responder program</h3>
-        <p class = "description">Short description or budget breakdown goes here.</p></div>
-      </div>
-
-      <div class="grid-card">
-        <div class="img-box"><img alt="" /></div>
-        <div class="text-box"><h3>Renovate and restore public parks to provide safe spaces for play and gatherings</h3>
-        <p class = "description">Short description or budget breakdown goes here.</p></div>
-      </div>
-
-      <div class="grid-card">
-        <div class="img-box"><img alt="" /></div>
-        <div class="text-box"><h3>Organize community events where people can meet their neighbors</h3>
-        <p class = "description">Short description or budget breakdown goes here.</p></div>
-      </div>
-
-      <div class="grid-card">
-        <div class="img-box"><img alt="" /></div>
-        <div class="text-box"><h3>Create a community garden with fresh fruits and vegetables</h3>
-        <p class = "description">Short description or budget breakdown goes here.</p></div>
-      </div>
-
-      <div class="grid-card">
-        <div class="img-box"><img alt="" /></div>
-        <div class="text-box"><h3>Renovate libraries which provide essential resources for free to city residents</h3>
-        <p class = "description">Short description or budget breakdown goes here.</p></div>
-      </div>
-
-    </section>
-
-    <!-- Methodology (might remove and just keep the vision statement at the top?) -->
+    <!-- Methodology -->
     <h2>The Methodology</h2>
-    <p>My numbers are based off of the analysis I had done on the budgets and results for OPD and alternative programs both in Oakland and across the U.S. Acknowledging that different cities have different population sizes and different needs, I give ballpark estimates of what is possible to achieve with mere fractions of the police budget. However, there is an element of "fuck-all" that I am embracing. My numbers are not exact, the math is not to the perfect decimal point, sometimes I decided to give a program an extra $1 million just because I can. If OPD can claim they need $34,000,000 in overtime next year because they feel like it, then I can claim that we should give 2% of that to the program that gives kids living in food deserts free lunch over the summer because I feel like it. At first I tried to pull exact data from exact sources to be as precise as possible - but when the police (or tech bros, or policymakers) can pull numbers out of their ass, why can’t I? There is no such thing as truly objective or neutral data, nor should there be. Data exists in the context of the world around us, and it is important to acknowledge that. Even if the math worked out that giving cops more money makes them more effective, I would rather feed a kid lunch than give a cop a gun. </p>
-    <!-- Interactive component -->
+    <p> My numbers are based off of the analysis I had done on the budgets and results for OPD and alternative programs both in Oakland and across the U.S. Acknowledging that different cities have different population sizes and different needs, I give ballpark estimates of what is possible to achieve with mere fractions of the police budget. However, there is an element of "fuck-all" that I am embracing. My numbers are not exact, the math is not to the perfect decimal point, sometimes I decided to give a program an extra $1 million just because I can. If OPD can claim they need $34,000,000 in overtime next year because they feel like it, then I can claim that we should give 2% of that to the program that gives kids living in food deserts free lunch over the summer. There is no such thing as truly objective or neutral data, nor should there be. Data exists in the context of the world around us, and it is important to acknowledge that. Even if the math worked out that giving cops more money makes them more effective, I would rather feed a kid lunch than give a cop a gun. </p> 
+    
+    <!-- Interactive Component -->
     <h2>Now it's your turn</h2>
-  
+    <p>My dream budget might not be your dream budget. My data clearly reflects the biases and priorities that I hold, but that does not mean it is the one objective answer (or that any such one objective truth exists!). Every city has its own unique needs and every community member has their own unique perspective on what change needs to happen.
+      I encourage you to create your own dream city budget with your most outlandish dreams using the generator below. Imagine if you had a reliable bus system that could take you across your whole city end to end in 20 minutes, or if your child had a magical pencil box that never ran out of school supplies. Tap into your wildest imagination and ask yourself what type of city you would build if you had all of the money and resources in the world.
+    </p>
+    <div class="container">
+        <div class="controls">
+            <h2>Place your dreams here</h2>
+            <form id="treemap-form">
+                <div class="input-row">
+                    <div style="flex:1">
+                        <label for="treemap-title">Graph Title </label>
+                        <input id="treemap-title" class="title-name" type="text" placeholder="e.g. My Dream Budget" required>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div style="flex:1">
+                        <label for="total">Total Value (required)</label>
+                        <input id="total" type="number" step="any" required placeholder="e.g. 10000">
+                    </div>
+                </div>
+                <!-- Dynamic nodes container -->
+                <div id="nodes-container">
+                    <div class="node-row" data-index="1">
+                        <div style="flex:1">
+                            <label>Name 1 (required)</label>
+                            <input class="node-name" type="text" placeholder="e.g. A brand new playground" required>
+                        </div>
+                        <div style="width:110px">
+                            <label>Value 1 (required)</label>
+                            <input class="node-value" type="number" step="any" required placeholder="e.g. 4000">
+                        </div>
+                    </div>
 
+                    <div class="node-row" data-index="2">
+                        <div style="flex:1">
+                            <label>Name 2 (optional)</label>
+                            <input class="node-name" type="text" placeholder="e.g. Accessible sidewalks">
+                        </div>
+                        <div style="width:110px">
+                            <label>Value 2 (optional)</label>
+                            <input class="node-value" type="number" step="any" placeholder="e.g. 3000">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display:flex;gap:8px;align-items:center;margin-top:6px">
+                    <button id="add-node-btn" type="button">Add Node</button>
+                    <button id="submit-btn" type="submit">Generate Graph</button>
+                </div>
+            </form>
+            <div id="message" class="message" aria-live="polite"></div>
+        </div>
+
+        <div class="visual">
+            <h2 id="treemap-title-display">My Dream Budget</h2>
+            <!-- svg will be injected here -->
+            <div id="treemap-area"></div>
+        </div>
+    </div>
     
     <!-- Thanks -->
     <h2>Thanks</h2>
     <p> This project was directly inspired by the ongoing grassroots community building efforts in Oakland and across the U.S. I am but a humble data scientist who draws inspiration 
         from the people around me doing the work every day on the ground.  
+    </p>
+
+    <!-- References -->
+    <h2>References</h2>
+    <p class = 'references'>
+      [1] Klein, Beck. “Oakland Police Routinely Overspend on Overtime. Does the City’s New Budget Fix This?” *The Oaklandside*, 25 June 2025, <a href = “[oaklandside.org/2025/06/25/oakland-police-routinely-overspend-on-overtime-does-the-citys-new-budget-fix-this/](http://oaklandside.org/2025/06/25/oakland-police-routinely-overspend-on-overtime-does-the-citys-new-budget-fix-this/)”>[oaklandside.org/2025/06/25/oakland-police-routinely-overspend-on-overtime-does-the-citys-new-budget-fix-this/](http://oaklandside.org/2025/06/25/oakland-police-routinely-overspend-on-overtime-does-the-citys-new-budget-fix-this/) </a>
+
+<br>
+
+[2] Makam, Palika. “What’s so Harmful about Copaganda?” *Teen Vogue*, 5 Aug. 2020, <a href = “[www.teenvogue.com/story/what-is-copaganda-explainer](http://www.teenvogue.com/story/what-is-copaganda-explainer)”> [www.teenvogue.com/story/what-is-copaganda-explainer](http://www.teenvogue.com/story/what-is-copaganda-explainer) </a>
+
+<br>
+
+[3] IFPTE21. “Smarter Public Safety: A Roadmap for Oakland.” 2025, <a href = https://ifpte21.org/wp-content/uploads/2025/05/Smarter-Public-Safety-A-Roadmap-for-Oakland-May-6-2025.pdf”> https://ifpte21.org/wp-content/uploads/2025/05/Smarter-Public-Safety-A-Roadmap-for-Oakland-May-6-2025.pdf </a>
+
+<br>
+
+[4] IFPTE21. “Oakland’s Roadmap to a Sustainable Budget.” 2024, <a href = “https://ifpte21.org/wp-content/uploads/2024/11/Oakland-Budget-Roadmap-Report.pdf”> https://ifpte21.org/wp-content/uploads/2024/11/Oakland-Budget-Roadmap-Report.pdf</a>
+
+<br> 
+
+[5] Orenstein, Natalie. ““Nobody’s Happy Budget”: Oakland Adopts $4.2 Billion Spending Plan.” *The Oaklandside*, 11 June 2025, <a href = “[oaklandside.org/2025/06/11/oakland-budget-adopted-illegal-dumping-police/](http://oaklandside.org/2025/06/11/oakland-budget-adopted-illegal-dumping-police/)”>[oaklandside.org/2025/06/11/oakland-budget-adopted-illegal-dumping-police/](http://oaklandside.org/2025/06/11/oakland-budget-adopted-illegal-dumping-police/) </a>
+<br> 
+[6] Jordan, Allison. “6 Ways Cities and Counties Can Reduce Gun Violence.” *Center for American Progress*, 21 Oct. 2024, <a href = “[www.americanprogress.org/article/6-ways-cities-and-counties-can-reduce-gun-violence/](http://www.americanprogress.org/article/6-ways-cities-and-counties-can-reduce-gun-violence/)”>[www.americanprogress.org/article/6-ways-cities-and-counties-can-reduce-gun-violence/](http://www.americanprogress.org/article/6-ways-cities-and-counties-can-reduce-gun-violence/) </a>
+<br>
+[7] National Alliance to End Homelessness. “Housing First.” *National Alliance to End Homelessness*, 2022, <a href = “[endhomelessness.org/resources/toolkits-and-training-materials/housing-first/](http://endhomelessness.org/resources/toolkits-and-training-materials/housing-first/)”> [endhomelessness.org/resources/toolkits-and-training-materials/housing-first/](http://endhomelessness.org/resources/toolkits-and-training-materials/housing-first/) <a>
+<br>
+[8] Orenstein, Natalie. ““Nobody’s Happy Budget”: Oakland Adopts $4.2 Billion Spending Plan.” *The Oaklandside*, 11 June 2025, <a href = “[oaklandside.org/2025/06/11/oakland-budget-adopted-illegal-dumping-police/](http://oaklandside.org/2025/06/11/oakland-budget-adopted-illegal-dumping-police/)”> [oaklandside.org/2025/06/11/oakland-budget-adopted-illegal-dumping-police/](http://oaklandside.org/2025/06/11/oakland-budget-adopted-illegal-dumping-police/) </a>
+<br> 
+[9] American Academy of Arts and Sciences. “Art for Life’s Sake | American Academy of Arts and Sciences.” *Www.amacad.org*, 2024, <a href = “[www.amacad.org/publication/case-for-arts-education/section/3](http://www.amacad.org/publication/case-for-arts-education/section/3)”> [www.amacad.org/publication/case-for-arts-education/section/3](http://www.amacad.org/publication/case-for-arts-education/section/3) </a> 
+<br>
+[10] “Afterschool and Summer Learning: Public Safety Remains a Top Concern among City Officials. I.” National League of Cities. <a href = “https://www.nlc.org/wp-content/uploads/2020/10/Afterschool-and-Summer-Learning-a-city-strategy-for-public-safety-brief.pdf”> https://www.nlc.org/wp-content/uploads/2020/10/Afterschool-and-Summer-Learning-a-city-strategy-for-public-safety-brief.pdf </a>
+<br>
+
+[11] “Coronavirus Aid, Relief, and Economic Security.” *Oaklandca.gov*, 2024, <a href = “[www.oaklandca.gov/Business/For-Business-Owners/Neighborhood-Business-Assistance/Coronavirus-Aid-Relief-And-Economic-Security](http://www.oaklandca.gov/Business/For-Business-Owners/Neighborhood-Business-Assistance/Coronavirus-Aid-Relief-And-Economic-Security)”> [www.oaklandca.gov/Business/For-Business-Owners/Neighborhood-Business-Assistance/Coronavirus-Aid-Relief-And-Economic-Security](http://www.oaklandca.gov/Business/For-Business-Owners/Neighborhood-Business-Assistance/Coronavirus-Aid-Relief-And-Economic-Security)</a> 
+<br> 
+[12] “Gun Violence Is a Public Health Crisis.” *American Public Health Association*, <a href = “[www.apha.org/getcontentasset/cd515a29-89fa-45aa-a2c3-55ef0c4c4a92/7ca0dc9d-611d-46e2-9fd3-26a4c03ddcbb/220617_gun_violence_prevention_fact_sheet.pdf](http://www.apha.org/getcontentasset/cd515a29-89fa-45aa-a2c3-55ef0c4c4a92/7ca0dc9d-611d-46e2-9fd3-26a4c03ddcbb/220617_gun_violence_prevention_fact_sheet.pdf?language=en)”> [www.apha.org/getcontentasset/cd515a29-89fa-45aa-a2c3-55ef0c4c4a92/7ca0dc9d-611d-46e2-9fd3-26a4c03ddcbb/220617_gun_violence_prevention_fact_sheet.pdf](http://www.apha.org/getcontentasset/cd515a29-89fa-45aa-a2c3-55ef0c4c4a92/7ca0dc9d-611d-46e2-9fd3-26a4c03ddcbb/220617_gun_violence_prevention_fact_sheet.pdf?language=en)</a>
+<br>
+[13] *Community Violence Intervention*. Vera Institute of Justice, 2021. <a href = “[https://vera-institute.files.svdcdn.com/production/downloads/publications/alternatives-to-policing-community-violence-intervention-fact-sheet.pdf](https://vera-institute.files.svdcdn.com/production/downloads/publications/alternatives-to-policing-community-violence-intervention-fact-sheet.pdf?dm=1629132950)”>[https://vera-institute.files.svdcdn.com/production/downloads/publications/alternatives-to-policing-community-violence-intervention-fact-sheet.pdf](https://vera-institute.files.svdcdn.com/production/downloads/publications/alternatives-to-policing-community-violence-intervention-fact-sheet.pdf?dm=1629132950) </a>
+<br>
+[14] Cure Violence Global. *We Can Cure Violence*. <a href = “https://cvg.org/wp-content/uploads/2020/03/2020.03.05-US-Handout.pdf”> https://cvg.org/wp-content/uploads/2020/03/2020.03.05-US-Handout.pdf </a>
+<br>
+[15] “Financial Crisis | Bart.gov.” *Www.bart.gov*, <a href = “[www.bart.gov/about/financials/crisis](http://www.bart.gov/about/financials/crisis)”> [www.bart.gov/about/financials/crisis](http://www.bart.gov/about/financials/crisis) </a>
+<br>
+[16] Owens, Darrell. “Why Transit in Oakland Sucks.” *The Discourse Lounge*, Substack, 2025, <a href = “[darrellowens.substack.com/p/why-transit-in-oakland-sucks](http://darrellowens.substack.com/p/why-transit-in-oakland-sucks)”>[darrellowens.substack.com/p/why-transit-in-oakland-sucks](http://darrellowens.substack.com/p/why-transit-in-oakland-sucks) </a>
+
+<br>
+[17] Heaps, Wendy, et al. “Public Transportation in the US: A Driver of Health and Equity | Health Affairs Brief.” *Healthaffairs.org*, 29 July 2021, <a href = “[www.healthaffairs.org/content/briefs/public-transportation-us-driver-health-and-equity](http://www.healthaffairs.org/content/briefs/public-transportation-us-driver-health-and-equity)”> [www.healthaffairs.org/content/briefs/public-transportation-us-driver-health-and-equity](http://www.healthaffairs.org/content/briefs/public-transportation-us-driver-health-and-equity) </a>
+<br>
+[18] “The People’s Community Mobile Health Clinic.” *People’s Programs*, 2014, <a href = “[www.peoplesprograms.com/health-clinic](http://www.peoplesprograms.com/health-clinic)”> [www.peoplesprograms.com/health-clinic](http://www.peoplesprograms.com/health-clinic) </a> 
+<br>
+[19]  “Current Campaigns.” *Anti Police Terror Project*, 2025, <a href = “[www.antipoliceterrorproject.org/current-campaigns-1](http://www.antipoliceterrorproject.org/current-campaigns-1)”> [www.antipoliceterrorproject.org/current-campaigns-1](http://www.antipoliceterrorproject.org/current-campaigns-1) </a> 
+
+<br>
+[20] Rodriguez, Christian. “Improving Public Safety through Better Accountability and Prevention.” *Center for American Progress*, 16 May 2024, <a href = “[www.americanprogress.org/article/improving-public-safety-through-better-accountability-and-prevention/](http://www.americanprogress.org/article/improving-public-safety-through-better-accountability-and-prevention/)”>[www.americanprogress.org/article/improving-public-safety-through-better-accountability-and-prevention/](http://www.americanprogress.org/article/improving-public-safety-through-better-accountability-and-prevention/) </a>
+<br>
+[21] Attipoe-Dorcoo, Sharon, et al. “Analysis of Annual Costs of Mobile Clinics in the Southern United States.” *Journal of Primary Care & Community Health*, vol. 11, no. 11, Jan. 2020, p. 215013272098062, <a href = “https://doi.org/10.1177/2150132720980623”> https://doi.org/10.1177/2150132720980623 </a> 
+<br>
+[22] “Coronavirus Aid, Relief, and Economic Security.” *Oaklandca.gov*, 2024, <a href = “[www.oaklandca.gov/Business/For-Business-Owners/Neighborhood-Business-Assistance/Coronavirus-Aid-Relief-And-Economic-Security](http://www.oaklandca.gov/Business/For-Business-Owners/Neighborhood-Business-Assistance/Coronavirus-Aid-Relief-And-Economic-Security)”> [www.oaklandca.gov/Business/For-Business-Owners/Neighborhood-Business-Assistance/Coronavirus-Aid-Relief-And-Economic-Security](http://www.oaklandca.gov/Business/For-Business-Owners/Neighborhood-Business-Assistance/Coronavirus-Aid-Relief-And-Economic-Security) </a> 
+<br>
+[23] “Why Care about Independent, Locally Owned Businesses?” *Institute for Local Self-Reliance*, May 2024, <a href = “[ilsr.org/article/independent-business/why-care-about-independent-locally-owned-businesses/](http://ilsr.org/article/independent-business/why-care-about-independent-locally-owned-businesses/)”> [ilsr.org/article/independent-business/why-care-about-independent-locally-owned-businesses/](http://ilsr.org/article/independent-business/why-care-about-independent-locally-owned-businesses/) </a> 
+<br> 
+[24] “Criminalization.” *Treatment Advocacy Center*, 12 Oct. 2023, <a href = “[www.tac.org/criminalization/](http://www.tac.org/criminalization/)”>https://www.tac.org/criminalization/ </a> 
+
+<br>
+[25] The Center for Popular Democracy. *Beyond Policing Building Community Safety without Police*. 2023, <a href = “https://raceandpolicing.issuelab.org/resources/44281/44281.pdf”> https://raceandpolicing.issuelab.org/resources/44281/44281.pdf </a> 
+<br>
+[26] Wilk, Nathan. “Eugene after CAHOOTS: The End of the Crisis Response Program, and the Efforts to Bring It Back.” *KLCC | NPR for Oregonians*, KLCC, 3 June 2025, <a href = “[www.klcc.org/health-medicine/2025-06-03/eugene-after-cahoots-the-end-of-the-crisis-response-program-and-the-efforts-to-bring-it-back](http://www.klcc.org/health-medicine/2025-06-03/eugene-after-cahoots-the-end-of-the-crisis-response-program-and-the-efforts-to-bring-it-back)”> [www.klcc.org/health-medicine/2025-06-03/eugene-after-cahoots-the-end-of-the-crisis-response-program-and-the-efforts-to-bring-it-back](http://www.klcc.org/health-medicine/2025-06-03/eugene-after-cahoots-the-end-of-the-crisis-response-program-and-the-efforts-to-bring-it-back) </a> 
+
+<br>
+[27] City Parks Forum. “How Cities Use Parks to Create Safer Neighborhoods.” *American Planning Association*, 2003, <a href = “[www.brec.org/assets/General_Info/Why_R_Parks_Important/Papers/Parks-Create-Safer-Neighborhoods.pdf](http://www.brec.org/assets/General_Info/Why_R_Parks_Important/Papers/Parks-Create-Safer-Neighborhoods.pdf)”> [www.brec.org/assets/General_Info/Why_R_Parks_Important/Papers/Parks-Create-Safer-Neighborhoods.pdf](http://www.brec.org/assets/General_Info/Why_R_Parks_Important/Papers/Parks-Create-Safer-Neighborhoods.pdf) </a> 
+
+<br>
+[28] Aol, Lora. “Role of Arts and Cultural Events in Community Development and Social Cohesion.” *International Journal of Humanity and Social Sciences*, vol. 3, no. 3, 3 June 2024, pp. 39–51, <a href = “https://doi.org/10.47941/ijars.1943”> https://doi.org/10.47941/ijars.1943</a>
+
+<br>
+[29]  Campodonico, Christina. “What Doom Loop? “Civic Joy Fund” Aims to Bring SF Good Vibes.” *Sfstandard.com*, 8 May 2023, <a href = “[sfstandard.com/2023/05/08/san-francisco-civic-joy-fund-aims-to-fix-doom-loop/](http://sfstandard.com/2023/05/08/san-francisco-civic-joy-fund-aims-to-fix-doom-loop/)”>  [sfstandard.com/2023/05/08/san-francisco-civic-joy-fund-aims-to-fix-doom-loop/](http://sfstandard.com/2023/05/08/san-francisco-civic-joy-fund-aims-to-fix-doom-loop/) </a>
+
+<br>
+[30] Bridger, Camille. “How Greening Communities Can Reduce Violence and Promote Health | the National Environmental Education Foundation (NEEF).” *Www.neefusa.org*, 3 Apr. 2024, <a href = “[www.neefusa.org/story/health-and-environment/how-greening-communities-can-reduce-violence-and-promote-health](http://www.neefusa.org/story/health-and-environment/how-greening-communities-can-reduce-violence-and-promote-health)> [www.neefusa.org/story/health-and-environment/how-greening-communities-can-reduce-violence-and-promote-health](http://www.neefusa.org/story/health-and-environment/how-greening-communities-can-reduce-violence-and-promote-health)  </a> 
+
+<br>
+[31] “2024 - Recreation, Culture + Education: Enhancement Projects | Office of Resilience and Capital Planning.” *Onesanfrancisco.org*, 2024, <a href = “[onesanfrancisco.org/cap-plan-2024/recreation-culture-education-enhancement-projects](http://onesanfrancisco.org/cap-plan-2024/recreation-culture-education-enhancement-projects)”> [onesanfrancisco.org/cap-plan-2024/recreation-culture-education-enhancement-projects](http://onesanfrancisco.org/cap-plan-2024/recreation-culture-education-enhancement-projects) </a> 
+
+<br>
+[32] “ECONOMIC ENGINES.” California State Library. <a href = “https://www.library.ca.gov/wp-content/uploads/2021/09/Value-of-Libraries-Economic-Engine.pdf”>
+https://www.library.ca.gov/wp-content/uploads/2021/09/Value-of-Libraries-Economic-Engine.pdf </a>
+
+<br>
+[33] Brownlee, Chip. “Public Libraries Can Play a Role in Gun Violence Prevention.” *The Trace*, 12 Sept. 2023, <a href =  “[www.thetrace.org/2023/09/library-reduce-gun-violence-maryland/](http://www.thetrace.org/2023/09/library-reduce-gun-violence-maryland/)”>[www.thetrace.org/2023/09/library-reduce-gun-violence-maryland/](http://www.thetrace.org/2023/09/library-reduce-gun-violence-maryland/) </a>
+<br>
+[34] Martin, Amy. “How Does Oakland Public Library Spending Compare to Oakland Police Department?  - SEIU 1021.” *SEIU 1021*, 4 Apr. 2018, <a href = “[www.seiu1021.org/post/how-does-oakland-public-library-spending-compare-oakland-police-department](http://www.seiu1021.org/post/how-does-oakland-public-library-spending-compare-oakland-police-department)”> [www.seiu1021.org/post/how-does-oakland-public-library-spending-compare-oakland-police-department](http://www.seiu1021.org/post/how-does-oakland-public-library-spending-compare-oakland-police-department) </a>
     </p>
   </body>
 </html>
