@@ -1,4 +1,3 @@
-
 .arimo-fonts{
   font-family: "Arimo", sans-serif;
   font-optical-sizing: auto;
@@ -19,8 +18,8 @@ h1 {
 h2 {
     font-family: "Arimo", sans-serif;
     font-size: 20px;
-    margin-left: 10px;
-    
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 h3 {
@@ -32,82 +31,94 @@ h3 {
 p {
     font-family: "Arimo", sans-serif;
     font-size: 18px;
-    margin-left: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
-.postscript{
+.postscript, .references {
     font-size: 14px;
     font-style: italic;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
-.animation-container {
+
+/*P5 Sketch CSS*/
+
+#animation-container {
     position: relative;
     width: 100%;
+    min-height: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px 0;
+    margin: 0 auto;
 }
 
 /* Center the canvas element specifically */
-.animation-container canvas {
+#animation-container canvas {
     display: block !important;  /* Override p5.js default */
     margin: 0 auto !important; /* Override p5.js default */
     position: static !important; /* Override p5.js default absolute positioning */
 }
 
-/* Grid layout with min 300px per frame */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 16px;
-    justify-content: center;
-    padding: 16px;
+/*Treemap CSS*/
+.container{
+	display:flex;
+	gap:10px;
+    padding: 20px;
+    height: 600px;
+	align-items:flex-start;
+}
+.controls{
+	width:300px;
+    margin-right: 30px;
+}
+.controls h2, .visual h2{margin:0 0 8px 0}
+.controls form{display:flex;flex-direction:column;gap:8px}
+.controls label{font-size:13px;font-family: "Arimo", sans-serif;}
+.controls input{padding:6px 8px;font-size:14px;font-family: "Arimo", sans-serif;}
+.controls button{padding:8px 10px;margin-top:6px}
+.message{color:#b00;margin-top:8px;min-height:1.2em}
+
+.input-row{
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+.input-row input[type="text"],
+.input-row input[type="number"] {
+    width: 100%;
 }
 
-.grid-card {
-    /* allow cards to stretch horizontally but keep a consistent visual width
-    when there's room; use min-height so text area can expand if needed */
-    min-width: 300px;
+.node-row{
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    margin-bottom: 6px;
+    position: relative;
+}
+
+.node-row > div {
     display: flex;
     flex-direction: column;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-    background: #fff;
-    border-radius: 4px;
-    overflow: hidden;
 }
 
-.img-box {
+.node-row input {
     width: 100%;
-    height: 200px; /* fixed image display height */
-    background: #e6e6e6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.img-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* ensure images fill the box */
-    display: block;
+.visual{
+	flex:1;
 }
+#treemap-area svg{border:1px solid #ddd;background:#f8f8f8}
 
-.text-box {
-    min-height: 200px; 
-    padding: 8px;
-    box-sizing: border-box;
-    overflow: auto;
-    background: #fbfbfb;
-}
+/* ensure treemap area holds exact dimensions visually */
+#treemap-area{width:900px;height:700px;overflow:hidden}
 
-.description {
-    font-size: 14px;
-    color: #555;
-}
-
-/* On very wide screens, limit the max-width of a card to keep readable line lengths */
-@media (min-width: 1200px) {
-    .grid-card { max-width: 240px; }
+/* small responsive fallback */
+@media (max-width:980px){
+	.container{flex-direction:column}
+	#treemap-area{width:100%;height:auto}
+	#treemap-area svg{width:100%;height:auto}
 }
